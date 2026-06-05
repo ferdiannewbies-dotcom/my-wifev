@@ -1,0 +1,202 @@
+body{
+    background-color: #880202;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+.floating-heart {
+    position: absolute;
+    font-size: 28px;
+    opacity: 0.8;
+    animation: floatHeart 8s ease-in infinite;
+}
+.floating-heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-heart:nth-child(2) { left: 30%; animation-delay: 1.5s; }
+.floating-heart:nth-child(3) { left: 50%; animation-delay: 3s; }
+.floating-heart:nth-child(4) { left: 70%; animation-delay: 4.5s; }
+.floating-heart:nth-child(5) { left: 90%; animation-delay: 2s; }
+@keyframes floatHeart {
+    0% { transform: translateY(0) scale(1); opacity: 0.8; }
+    50% { transform: translateY(-30px) scale(1.1); opacity: 1; }
+    100% { transform: translateY(-80px) scale(1); opacity: 0; }
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+    padding: 0 10px;
+}
+.gallery-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+.gallery-photo:hover {
+    transform: scale(1.05);
+}
+h2{
+    text-align: center;
+    font-size: 24px;
+    margin-top: 30px;
+    color: #FFB6C1;
+}
+.message {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.1) 0%, rgba(255, 192, 203, 0.1) 100%);
+    border-left: 4px solid #FF69B4;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 8px;
+}
+.quotes {
+    line-height: 1.8;
+}
+.interactive-section {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.15) 0%, rgba(255, 182, 193, 0.15) 100%);
+    border: 2px solid #FF69B4;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 12px;
+    text-align: center;
+}
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+.msg-btn {
+    background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 14px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.4);
+}
+.msg-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(255, 105, 180, 0.6);
+}
+.msg-btn:active {
+    transform: translateY(-1px);
+}
+.hidden-message {
+    display: none;
+    opacity: 0;
+}
+.show-message {
+    display: block;
+    animation: slideIn 0.5s ease-out;
+    opacity: 1;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.hidden-message p, .show-message p {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.hero-note {
+    background: rgba(255, 182, 193, 0.14);
+    border: 1px solid rgba(255, 105, 180, 0.4);
+    padding: 22px;
+    border-radius: 14px;
+    margin: 20px 0;
+    text-align: center;
+}
+.hero-note h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #FFD1DC;
+}
+.hero-note p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 700px;
+}
+.heart-row {
+    margin-top: 12px;
+    font-size: 22px;
+}
+.story-section {
+    margin: 20px 0;
+}
+.story-section h2 {
+    margin-bottom: 20px;
+    color: #FFB6C1;
+}
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+.story-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 182, 193, 0.3);
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+}
+.story-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 182, 193, 0.18);
+}
+.story-card h3 {
+    margin-top: 0;
+    color: #FFB6C1;
+}
+.story-card p {
+    margin: 10px 0 0;
+    line-height: 1.7;
+}
+.romance-section {
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.15) 0%, rgba(255, 105, 180, 0.15) 100%);
+    border: 2px solid #FF1493;
+}
+.romance-section h2 {
+    color: #FF69B4;
+}
+.romance-btn {
+    background: linear-gradient(135deg, #FF1493 0%, #C71585 100%);
+    box-shadow: 0 4px 12px rgba(255, 20, 147, 0.4);
+}
+.romance-btn:hover {
+    box-shadow: 0 6px 16px rgba(255, 20, 147, 0.6);
+}
+.apology-section {
+    background: linear-gradient(135deg, rgba(255, 192, 203, 0.15) 0%, rgba(255, 182, 193, 0.15) 100%);
+    border: 2px solid #FFB6C1;
+}
+.apology-section h2 {
+    color: #FFB6C1;
+}
+.apology-btn {
+    background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%);
+    box-shadow: 0 4px 12px rgba(255, 182, 193, 0.5);
+}
+.apology-btn:hover {
+    box-shadow: 0 6px 16px rgba(255, 182, 193, 0.7);
+}
